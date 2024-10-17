@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>rockit_albums</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.header {
+			text-align: center;
+			padding: 10px;
+			font-family: courier;
+			background-color: #49475B;
+			color: #FFFFFF;
+		}
+		body {
+			background-color: #000;
+		}
+		li {
+			display: inline;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.sign-up-form {font-family: courier;
+			background-color: #49475B;
+			color: #FFFFFF;
+			border-radius: 10px;
+			padding: 10px;
+			margin: .5%;
+			text-align: center;
+			display: flex;
+			justify-content: space-between;
+		}
+		.bestsellers {font-family: courier;
+			background-color: #49475B;
+			color: #FFFFFF;
+			border-radius: 10px;
+			padding: 10px;
+			margin: .5%;
+			text-align: center;
+		}
+		.products {font-family: courier;
+			background-color: #49475B;
+			color: #FFFFFF;
+			border-radius: 10px;
+			padding: 10px;
+			margin: .5%;
+			text-align: center;
+		}
+		.cards {display: flex;
+			justify-content: space-between;
+		}
+		.card {
+			font-family: courier;
+			background-color: #2A4D60;
+			color: #FFFFFF;
+			border-radius: 10px;
+			padding: 10px;
+			margin: .5%;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+			width: 50%;
+		}
+		.container {
+			padding: 2px 16px;
+		}
+		.footer {
+			background-color: #49475B;
+			text-align: center;
+			padding: 10px;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+			font-family: courier;
+			color: #FFFFFF;
+		}
+		.forms {font-family: courier;
+			background-color: #49475B;
+			color: #FFFFFF;
+			padding: 10px;
+			margin: .5%;
+			width: 50%;
+		}
+		.main {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			height: 1px;
+			width: 1px;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: -42vw -4vh 0px 0px #fff, 25vw -41vh 0px 0px #fff, -20vw 49vh 0px 1px #fff, 5vw 40vh 1px 1px #fff, 29vw 19vh 1px 0px #fff, -44vw -13vh 0px 0px #fff, 46vw 41vh 0px 1px #fff, -3vw -45vh 0px 1px #fff, 47vw 35vh 1px 0px #fff, 12vw -8vh 1px 0px #fff, -34vw 48vh 1px 1px #fff, 32vw 26vh 1px 1px #fff, 32vw -41vh 1px 1px #fff, 0vw 37vh 1px 1px #fff, 34vw -26vh 1px 0px #fff, -14vw -49vh 1px 0px #fff, -12vw 45vh 0px 1px #fff, -44vw -33vh 0px 1px #fff, -13vw 41vh 0px 0px #fff, -36vw -11vh 0px 1px #fff, -23vw -24vh 1px 0px #fff, -38vw -27vh 0px 1px #fff, 16vw -19vh 0px 0px #fff, 28vw 33vh 1px 0px #fff, -49vw -4vh 0px 0px #fff, 16vw 32vh 0px 1px #fff, 36vw -18vh 1px 0px #fff, -25vw -30vh 1px 0px #fff, -23vw 24vh 0px 1px #fff, -2vw -35vh 1px 1px #fff, -25vw 9vh 0px 0px #fff, -15vw -34vh 0px 0px #fff, -8vw -19vh 1px 0px #fff, -20vw -20vh 1px 1px #fff, 42vw 50vh 0px 1px #fff, -32vw 10vh 1px 0px #fff, -23vw -17vh 0px 0px #fff, 44vw 15vh 1px 0px #fff, -40vw 33vh 1px 1px #fff, -43vw 8vh 0px 0px #fff, -48vw -15vh 1px 1px #fff, -24vw 17vh 0px 0px #fff, -31vw 50vh 1px 0px #fff, 36vw -38vh 0px 1px #fff, -7vw 48vh 0px 0px #fff, 15vw -32vh 0px 0px #fff, 29vw -41vh 0px 0px #fff, 2vw 37vh 1px 0px #fff, 7vw -40vh 1px 1px #fff, 15vw 18vh 0px 0px #fff, 25vw -13vh 1px 1px #fff, -46vw -12vh 1px 1px #fff, -18vw 22vh 0px 0px #fff, 23vw -9vh 1px 0px #fff, 50vw 12vh 0px 1px #fff, 45vw 2vh 0px 0px #fff, 14vw -48vh 1px 0px #fff, 23vw 43vh 0px 1px #fff, -40vw 16vh 1px 1px #fff, 20vw -31vh 0px 1px #fff, -17vw 44vh 1px 1px #fff, 18vw -45vh 0px 0px #fff, 33vw -6vh 0px 0px #fff, 0vw 7vh 0px 1px #fff, -10vw -18vh 0px 1px #fff, -19vw 5vh 1px 0px #fff, 1vw 42vh 0px 0px #fff, 22vw 48vh 0px 1px #fff, 39vw -8vh 1px 1px #fff, -6vw -42vh 1px 0px #fff, -47vw 34vh 0px 0px #fff, -46vw 19vh 0px 1px #fff, -12vw -32vh 0px 0px #fff, -45vw -38vh 0px 1px #fff, -28vw 18vh 1px 0px #fff, -38vw -46vh 1px 1px #fff, 49vw -6vh 1px 1px #fff, -28vw 18vh 1px 1px #fff, 10vw -24vh 0px 1px #fff, -5vw -11vh 1px 1px #fff, 33vw -8vh 1px 0px #fff, -16vw 17vh 0px 0px #fff, 18vw 27vh 0px 1px #fff, -8vw -10vh 1px 1px #fff;
+			animation: zoom 16s alternate infinite;
+		}
+		@keyframes zoom {
+			0% {transform: scale(1);}
+			100% {transform: scale(1.5);}
+		}
+		.topnav {
+			overflow: hidden;
+			font-family: courier;
+			background-color: #49475B;
+			border-radius: 10px;
+			padding: 10px;
+			margin: .5%;
+		}
+		.topnav ul {
+			display: flex;
+			justify-content: space-between;
+		}
+		.topnav a {
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="main"></div>
+	<div class="header" id="rockit_albums">
+		<p><i> Welcome to rockit_albums! </i></p>
+	</div>
+	<div class="topnav">
+		<ul>
+			<li><strong><a href="#rockit_albums">rockit_albums</a></strong></li>
+			<li><a href="#artistReccomendations">Artist-Recommendations</a></li>
+			<li><a href="#albums">Albums</a></li>
+			<li><a href="#signup">Sign-up</a></li>
+			<li><a href="#login">Login</a></li>
+		</ul>
+	</div>
+	<div class="bestsellers" id="artistReccomendations">
+		<h3> Bestseller Albums </h3>
+	<div class="cards">
+		<div class="card">
+			<img src="wolf.png" alt="Avatar" style="width:75%">
+			<div class="container">
+				<h4><b> Tyler, the Creator - Wolf </b></h4>
+				<p> ₱3,100.00 </p>
+			</div>
+		</div>
+		<div class="card">
+			<img src="stevelacy.png" alt="Avatar" style="width:75%">
+			<div class="container">
+				<h4><b> Steve Lacy - Gemini Rights </b></h4>
+				<p> ₱2,200.00 </p>
+			</div>
+		</div>
+		<div class="card">
+			<img src="ye.png" alt="ye" style="width:75%">
+			<div class="container">
+				<h4><b> Kanye West - Ye </b></h4>
+				<p> ₱2,100.00 </p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="products" id="albums">
+		<h3> Our products </h3>
+		<div class="cards">
+			<div class="card">
+				<img src="jbrothers2.png" alt="Avatar" style="width:75%">
+				<div class="container">
+					<h4><b> Jonas Brothers – The Album LP </b></h4>
+					<p> ₱2,400.00 </p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="silkysonic.png" alt="Avatar" style="width:75%">
+				<div class="container">
+					<h4><b> Silk Sonic – An Evening With Silk Sonic </b></h4>
+					<p> ₱3,100.00 </p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="brunomars2.png" alt="ye" style="width:75%">
+				<div class="container">
+					<h4><b> Bruno Mars – XXIVK Magic </b></h4>
+					<p> ₱2,500.00 </p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="billeyelash.png" alt="Avatar" style="width:75%">
+				<div class="container">
+					<h4><b> Billie Eilish - HIT ME HARD AND SOFT </b></h4>
+					<p> ₱2,800.00 </p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="macmiller2.png" alt="Avatar" style="width:75%">
+				<div class="container">
+					<h4><b> Mac Miller – Circles </b></h4>
+					<p> ₱3,300.00 </p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="travscott.png" alt="ye" style="width:75%">
+				<div class="container">
+					<h4><b> Travis Scott-UTOPIA [Explicit Content] </b></h4>
+					<p> ₱3,400.00 </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sign-up-form">
+		<div class="forms" id="signup">
+			<form>
+				<h3> Registration </h3>
+				<div>
+					<label for="reg_name"> Name: </label>
+					<input type="text" id="reg_name" name="reg_name" required>
+				</div>
+				<div>
+					<label for="reg_password"> Password: </label>
+					<input type="password" id="reg_password" name="reg_password" required>
+				</div>
+				<br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+
+		<div class="forms" id="login">
+			<form>
+				<h3> Login </h3>
+				<div>
+					<label for="login_name"> Name: </label>
+					<input type="text" id="login_name" name="login_name" required>
+				</div>
+				<div>
+					<label for="login_password"> Password: </label>
+					<input type="password" id="login_password" name="login_password" required>
+				</div>
+				<br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+		<h3> Calvin Garcia | 9-Topaz </h3>
+	</div>
+
+</body>
+</html>
